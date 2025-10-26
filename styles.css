@@ -1,1 +1,65 @@
 /*  your css code here. If applicable */
+body {
+      background: repeating-linear-gradient(
+        45deg,
+        #1e1e1e,
+        #1e1e1e 10px,
+        #222 10px,
+        #222 20px
+      );
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Georgia', serif;
+    }
+
+    #animal-photos {
+      background-color: #3b3b3b;
+      padding: 20px 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      text-align: center;
+    }
+
+    #photo-heading {
+      color: white;
+      font-size: 28px;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    #animal-photos img {
+      width: 250px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    #animal-photos img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    }
+
+    /* Make grid layout responsive */
+    #animal-photos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-items: center;
+    }
+
+    @media (max-width: 900px) {
+      #animal-photos {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      #animal-photos {
+        grid-template-columns: 1fr;
+      }
+    }
